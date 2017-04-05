@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS `dns_zones` (
 CREATE TABLE IF NOT EXISTS `dns_records` (
   `id` int(11) unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `dns_zone` int(11) unsigned NOT NULL COMMENT 'FK dns_zones',
+  `pos` smallint(3) NOT NULL DEFAULT '0',
   `host` varchar(255) NOT NULL,
   `ttl` int(10) DEFAULT NULL COMMENT 'record TTL',
   `type` varchar(16) NOT NULL, /* supported records: *,A,AAAA,CNAME,MX,NS,SRV,TXT,hosting,ipssl,redirect */
@@ -39,7 +40,6 @@ CREATE TABLE IF NOT EXISTS `dns_records` (
   `redirect` text NOT NULL COMMENT 'URL for redirect',
   /* end HWS only */
   `comment` text,
-  `pending` text,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 

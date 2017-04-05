@@ -21,7 +21,11 @@ namespace RNTForest\dns\models;
 
 use Phalcon\Validation;
 
-class DnsRecords extends \RNTForest\core\models\ModelBase
+use RNTForest\core\interfaces\JobServerInterface;
+use RNTForest\core\interfaces\PendingInterface;
+use RNTForest\core\libraries\PendingHelpers;
+
+class DnsSlaves extends \RNTForest\core\models\ModelBase implements JobServerInterface
 {
 
     

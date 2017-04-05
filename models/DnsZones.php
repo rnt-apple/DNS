@@ -21,11 +21,10 @@ namespace RNTForest\dns\models;
 
 use Phalcon\Validation;
 
-use RNTForest\core\interfaces\JobServerInterface;
 use RNTForest\core\interfaces\PendingInterface;
 use RNTForest\core\libraries\PendingHelpers;
 
-class DnsZones extends \RNTForest\core\models\ModelBase implements JobServerInterface, PendingInterface
+class DnsZones extends \RNTForest\core\models\ModelBase implements PendingInterface
 {
 
     
